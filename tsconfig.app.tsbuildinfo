@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/CallToAction.tsx","./src/components/Candidates.tsx","./src/components/EarlyVoting.tsx","./src/components/Home.tsx","./src/components/Navigation.tsx","./src/components/VotingLocations.tsx","./src/lib/supabase.ts"],"version":"5.9.3"}
