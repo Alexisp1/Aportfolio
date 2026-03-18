@@ -23,10 +23,10 @@ function App() {
         <footer className="footer">
           <div className="container">
             <p className="footer-text">
-              Campaign 2026 - Vote for Change
+              Texas Democratic Runoff 2026
             </p>
             <p className="footer-text small">
-              Election Day: November 3, 2026
+              Runoff Election Day: May 27, 2026
             </p>
           </div>
         </footer>

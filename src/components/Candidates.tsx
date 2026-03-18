@@ -34,9 +34,9 @@ export function Candidates() {
   return (
     <section className="candidates-section">
       <div className="container">
-        <h1 className="section-title">Meet the Candidates</h1>
+        <h1 className="section-title">Democratic Runoff Candidates</h1>
         <p className="section-subtitle">
-          Learn about the dedicated individuals running to serve our community
+          Choose our Democratic nominees for Texas Lieutenant Governor and Attorney General
         </p>
 
         <div className="candidates-grid">

@@ -6,9 +6,9 @@ export function Home() {
       <section className="hero-section">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">Vote for Change</h1>
+            <h1 className="hero-title">Texas Democratic Runoff 2026</h1>
             <p className="hero-subtitle">
-              Your voice, your choice, your future. Join us in shaping our community for generations to come.
+              Choose our Democratic nominees for Lieutenant Governor and Attorney General. Your vote determines who will face the Republicans in November.
             </p>
             <div className="hero-buttons">
               <Link to="/candidates" className="hero-button primary">
@@ -35,7 +35,7 @@ export function Home() {
                 </svg>
               </div>
               <h3 className="quick-link-title">Candidates</h3>
-              <p className="quick-link-description">Learn about the candidates running for office</p>
+              <p className="quick-link-description">Meet the Democratic candidates for Lieutenant Governor and Attorney General</p>
             </Link>
 
             <Link to="/voting-locations" className="quick-link-card">
@@ -69,15 +69,15 @@ export function Home() {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-number">3</div>
+              <div className="stat-number">4</div>
               <div className="stat-label">Candidates</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">2</div>
+              <div className="stat-number">4</div>
               <div className="stat-label">Voting Locations</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">9</div>
+              <div className="stat-number">10</div>
               <div className="stat-label">Early Voting Days</div>
             </div>
           </div>
