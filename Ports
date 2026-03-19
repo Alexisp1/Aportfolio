@@ -1,0 +1,466 @@
+import { useState } from "react";
+import { X, ExternalLink, Mail, MapPin } from "lucide-react";
+
+export default function AlexisPortfolio() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const experiences = [
+    {
+      role: "Project Manager",
+      company: "DreamVoice LLC",
+      period: "Jan 2023 – Present",
+      points: [
+        "Led end-to-end coordination of SharePoint and microsite publishing for 200+ annual events, ensuring timely, consistent updates.",
+        "Developed content governance SOPs and editorial checklists to standardize workflows across marketing, technical, and communications teams.",
+        "Implemented Monday.com tracking and automations to manage deadlines, approvals, and stakeholder visibility.",
+        "Partnered with UX and communications to improve information architecture, readability, and usability.",
+        "Increased on-time publishing from 70% to 95%, reducing rework and improving stakeholder confidence.",
+      ],
+    },
+    {
+      role: "Web Content Specialist",
+      company: "U.S. Forest Service",
+      period: "Jan 2024 – Sept 2025",
+      points: [
+        "Led accessibility remediation across 50+ Drupal sites, fixing headings, color contrast, alt text, tables, and document accessibility issues.",
+        "Performed automated and manual testing (keyboard + screen reader) to validate WCAG 2.1 / Section 508 compliance.",
+        "Collaborated with IT, accessibility, and communications teams to implement governance, publishing standards, and review workflows.",
+        "Created SOPs and checklists; trained contributors on accessible publishing.",
+        "Reduced remediation cycles by 33% and improved audit readiness and consistency.",
+      ],
+    },
+    {
+      role: "Web Developer (Contract)",
+      company: "The Mighty Group",
+      period: "Jan 2024 – Jan 2025",
+      points: [
+        "Designed and optimized 5+ client websites, improving performance scores by up to 40%.",
+        "Built reusable React components and implemented structured metadata for SEO.",
+        "Conducted site audits to resolve crawl errors, improve Core Web Vitals, and enhance mobile responsiveness.",
+        "Integrated Google Analytics and Search Console for performance tracking and insights.",
+      ],
+    },
+    {
+      role: "Data Security Intern",
+      company: "Amazon",
+      period: "Jun 2023 – Aug 2023",
+      points: [
+        "Identified and helped resolve 10+ API vulnerabilities, strengthening application security and compliance.",
+        "Created integration documentation and secure coding guides to improve developer adoption and transparency.",
+      ],
+    },
+    {
+      role: "Senior IT Systems Analyst",
+      company: "AllianceBernstein",
+      period: "Aug 2021 – Jan 2024",
+      points: [
+        "Authored API documentation and internal resources, reducing support requests by 35%.",
+        "Partnered with development teams to improve intranet workflows and compliance tracking.",
+        "Automated user provisioning and access reviews with PowerShell, improving onboarding efficiency.",
+      ],
+    },
+    {
+      role: "Senior Information Development Specialist",
+      company: "CPS Energy",
+      period: "Sept 2018 – Sept 2021",
+      points: [
+        "Led content restructuring initiatives, improving intranet searchability by 40%.",
+        "Established taxonomy, version control, and audit standards for content lifecycle management.",
+        "Supported digital transformation initiatives by improving content structure, user flows, and information architecture.",
+      ],
+    },
+  ];
+
+  const projects = [
+    {
+      title: "Accessibility & Content QA",
+      type: "Web Content / Accessibility",
+      description:
+        "Led accessibility remediation and content quality improvements across 50+ Drupal sites to strengthen usability, compliance, and publishing consistency.",
+      overview:
+        "This project reflects my accessibility and content governance work at the U.S. Forest Service, where I improved public-facing web experiences across a large Drupal environment.",
+      challenge:
+        "The sites needed consistent remediation for issues involving headings, color contrast, alt text, tables, and document accessibility, while also improving publishing standards across teams.",
+      approach: [
+        "Performed automated and manual testing, including keyboard and screen-reader validation.",
+        "Partnered with IT, accessibility specialists, and communications teams on governance workflows.",
+        "Created SOPs and checklists for accessible publishing and contributor training.",
+      ],
+      outcomes: [
+        "Improved accessibility across 50+ Drupal sites",
+        "Reduced remediation cycles by 33%",
+        "Increased audit readiness and publishing consistency",
+      ],
+      tools: ["Drupal", "WCAG 2.1", "Section 508", "Accessibility Testing"],
+    },
+    {
+      title: "Multi-Database Integration with Azure Cloud",
+      type: "Computer Science Project",
+      description:
+        "A cross-database system connecting PostgreSQL, SQL Server, and Azure SQL to demonstrate retrieval, manipulation, and cloud-hosted workflows.",
+      overview:
+        "This technical project focused on designing a system that could integrate multiple database platforms into one structured cloud-based workflow.",
+      challenge:
+        "The goal was to connect different database technologies in a way that felt organized, scalable, and practical without relying on Oracle.",
+      approach: [
+        "Planned the architecture across PostgreSQL, SQL Server, and Azure SQL.",
+        "Structured the project to support retrieval, manipulation, and cross-database operations.",
+        "Used Azure as the cloud environment for hosting and integration planning.",
+      ],
+      outcomes: [
+        "Demonstrated cross-database systems thinking",
+        "Strengthened cloud architecture knowledge",
+        "Built a practical technical portfolio piece",
+      ],
+      tools: ["Azure", "PostgreSQL", "SQL Server", "Azure SQL"],
+    },
+    {
+      title: "Food Scanner App UI Redesign",
+      type: "Product / UI Design",
+      description:
+        "A visual refresh focused on cleaner layouts, stronger usability, and light/dark themed interface design.",
+      overview:
+        "This redesign focused on improving the visual clarity and user experience of an existing app by making the interface feel more modern, intuitive, and polished.",
+      challenge:
+        "The original design needed clearer hierarchy, stronger consistency, and a more cohesive visual style across screens.",
+      approach: [
+        "Redesigned screen layouts to improve spacing and visual hierarchy.",
+        "Applied cleaner component styling and stronger UI consistency.",
+        "Considered both light and dark mode experiences for a more complete visual system.",
+      ],
+      outcomes: [
+        "Created a cleaner and more modern interface",
+        "Improved readability and navigation flow",
+        "Built a stronger product presentation piece",
+      ],
+      tools: ["UI Design", "UX", "Design Systems", "Theme Design"],
+    },
+    {
+      title: "DreamVoice SOP Systems",
+      type: "Operations / Documentation",
+      description:
+        "Standard operating procedures designed to make business processes easier to follow, train, and scale.",
+      overview:
+        "This work centered on creating SOPs and workflow systems that helped teams operate more consistently and efficiently.",
+      challenge:
+        "Important internal processes needed to be documented in a way that was easy for team members to follow, teach, and repeat.",
+      approach: [
+        "Built structured SOPs using simple, clear instructions.",
+        "Created workflow documentation to support onboarding and consistency.",
+        "Focused on usability so documentation could be used in real day-to-day work.",
+      ],
+      outcomes: [
+        "Improved process clarity and team alignment",
+        "Supported smoother onboarding and training",
+        "Made workflows easier to scale and repeat",
+      ],
+      tools: ["SOP Development", "Operations", "Documentation", "Workflow Design"],
+    },
+    {
+      title: "SharePoint Hub",
+      type: "Web Content / SharePoint",
+      description:
+        "Designed and managed a SharePoint hub to centralize content, standardize publishing, and support 200+ annual events.",
+      overview:
+        "Built and maintained a SharePoint hub that organized microsites, resources, and event content into a consistent, easy-to-navigate experience.",
+      challenge:
+        "Content was scattered across sites with inconsistent formatting and unclear ownership, making updates slow and error-prone.",
+      approach: [
+        "Structured hub navigation and information architecture for clarity and scalability.",
+        "Created templates, SOPs, and editorial checklists for consistent publishing.",
+        "Implemented workflows and tracking for approvals and deadlines.",
+      ],
+      outcomes: [
+        "Centralized content for 200+ events",
+        "Improved publishing consistency and speed",
+        "Increased on-time updates and stakeholder visibility",
+      ],
+      tools: ["SharePoint", "Information Architecture", "Content Governance", "Workflow Automation"],
+    },
+    {
+      title: "Nail Salon Website (Infinity Nails)",
+      type: "Web Design / Front-End Development",
+      description:
+        "Designed and developed a modern, user-friendly website for a nail salon, focusing on booking experience, service presentation, and visual branding.",
+      overview:
+        "Created a clean, high-end website experience for a nail salon with clear services, pricing, and strong calls-to-action for booking.",
+      challenge:
+        "Needed a visually appealing site that communicates services clearly while feeling premium and easy to navigate on mobile and desktop.",
+      approach: [
+        "Designed a modern layout with strong visual hierarchy and clean typography.",
+        "Structured service sections to highlight offerings and pricing.",
+        "Optimized for responsive design and clear booking calls-to-action.",
+      ],
+      outcomes: [
+        "Polished, modern website design",
+        "Improved service visibility and engagement",
+        "Strong portfolio piece for client web work",
+      ],
+      tools: ["React", "UI Design", "Responsive Design", "Front-End Development"],
+    },
+  ];
+
+  const skills = [
+    "Web Content Management",
+    "Accessibility",
+    "React",
+    "Project Management",
+    "SharePoint",
+    "Drupal",
+    "HTML/CSS",
+    "JavaScript",
+  ];
+
+  return (
+    <main className="min-h-screen scroll-smooth bg-neutral-950 text-white">
+      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
+        <nav className="mb-16 flex items-center justify-between border-b border-white/10 pb-5 text-sm text-white/70">
+          <div>
+            <div className="text-base font-medium tracking-wide text-white">Alexis Parson</div>
+            <div className="mt-1 text-sm text-white/45">Web Content · Accessibility · Web Development</div>
+          </div>
+          <div className="flex flex-wrap gap-4 md:gap-6">
+            <button type="button" onClick={() => scrollToSection("about")} className="transition hover:text-white">About</button>
+            <button type="button" onClick={() => scrollToSection("experience")} className="transition hover:text-white">Experience</button>
+            <button type="button" onClick={() => scrollToSection("projects")} className="transition hover:text-white">Projects</button>
+            <button type="button" onClick={() => scrollToSection("education")} className="transition hover:text-white">Education</button>
+            <button type="button" onClick={() => scrollToSection("contact")} className="transition hover:text-white">Contact</button>
+          </div>
+        </nav>
+
+        <section className="grid gap-10 md:grid-cols-[1.3fr_.9fr] md:items-end">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-white/50">Portfolio</p>
+            <h1 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
+              Web content, accessibility, and digital experiences built with clarity.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 md:text-lg">
+              I’m Alexis Parson, a web content specialist and creative builder with experience in accessibility,
+              front-end work, digital organization, content systems, and project coordination. I care about websites
+              that feel clean, useful, and easy for people to navigate.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => scrollToSection("projects")}
+                className="rounded-2xl bg-white px-5 py-3 text-sm font-medium text-black transition hover:scale-[1.02]"
+              >
+                View Projects
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection("contact")}
+                className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+              >
+                Let’s Work Together
+              </button>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+            <p className="text-sm uppercase tracking-[0.25em] text-white/40">Focus</p>
+            <div className="mt-6 space-y-5">
+              <div>
+                <p className="text-sm text-white/50">Current Strengths</p>
+                <p className="mt-1 text-lg font-medium">Accessibility, content systems, design, project execution</p>
+              </div>
+              <div>
+                <p className="text-sm text-white/50">Based In</p>
+                <p className="mt-1 flex items-center gap-2 text-lg font-medium">
+                  <MapPin className="h-4 w-4" />
+                  San Antonio, Texas
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-white/50">Experience</p>
+                <p className="mt-1 text-lg font-medium">Public sector, enterprise, client, and operations work</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="about" className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-white/40">About</p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">A portfolio built around both creativity and structure.</h2>
+          </div>
+          <div>
+            <p className="text-base leading-8 text-white/70">
+              My background blends web content, accessibility, front-end development, documentation, and coordination.
+              I enjoy creating digital experiences that look polished, make sense to users, and support real business goals.
+              Whether I’m improving content, building interfaces, or organizing workflows, I focus on making things more usable.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <span key={skill} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section id="experience" className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.25em] text-white/40">Experience</p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Work that connects content, design, and execution.</h2>
+        </div>
+
+        <div className="space-y-6">
+          {experiences.map((item) => (
+            <article key={`${item.role}-${item.company}`} className="rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8">
+              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <h3 className="text-2xl font-semibold">{item.role}</h3>
+                  <p className="mt-1 text-white/60">{item.company}</p>
+                </div>
+                <p className="text-sm text-white/45">{item.period}</p>
+              </div>
+              <ul className="mt-6 space-y-3 text-white/75">
+                {item.points.map((point) => (
+                  <li key={point} className="flex gap-3 leading-7">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <p className="text-sm uppercase tracking-[0.25em] text-white/40">Selected Projects</p>
+        <h2 className="mt-4 max-w-3xl text-3xl font-semibold md:text-4xl">
+          A mix of web, technical, and operational work.
+        </h2>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <article key={project.title} className="group rounded-[2rem] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10">
+              <p className="text-sm uppercase tracking-[0.2em] text-white/40">{project.type}</p>
+              <h3 className="mt-4 text-2xl font-semibold">{project.title}</h3>
+              <p className="mt-4 leading-7 text-white/70">{project.description}</p>
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="mt-6 inline-flex items-center gap-2 text-sm text-white/70 underline transition hover:text-white"
+              >
+                View Project <ExternalLink className="h-4 w-4" />
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="education" className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <p className="text-sm uppercase tracking-[0.25em] text-white/40">Education & Certifications</p>
+        <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Academic background and credentials.</h2>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <article className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+            <h3 className="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
+            <p className="mt-1 text-white/60">Texas A&M University – San Antonio</p>
+          </article>
+
+          <article className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+            <h3 className="text-xl font-semibold">CompTIA Security+</h3>
+            <p className="mt-1 text-white/60">Certification · 2025</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10">
+          <p className="text-sm uppercase tracking-[0.25em] text-white/40">Contact</p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Interested in working together?</h2>
+          <p className="mt-4 max-w-2xl leading-7 text-white/70">
+            I’m open to opportunities in web content, accessibility, front-end development,
+            SharePoint, digital strategy, and project support.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:alexisp1@me.com" className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-medium text-black">
+              <Mail className="h-4 w-4" />
+              Email Me
+            </a>
+            <a href="https://github.com" className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium text-white">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/alexis-d-parson/" className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium text-white">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-white/10 bg-neutral-950 p-8 shadow-2xl">
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="absolute right-5 top-5 rounded-full border border-white/10 p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
+              aria-label="Close project details"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <p className="text-sm uppercase tracking-[0.25em] text-white/40">{selectedProject.type}</p>
+            <h3 className="mt-4 text-3xl font-semibold md:text-4xl">{selectedProject.title}</h3>
+            <p className="mt-4 text-base leading-8 text-white/70">{selectedProject.overview}</p>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+                <h4 className="text-lg font-semibold">Challenge</h4>
+                <p className="mt-3 leading-7 text-white/70">{selectedProject.challenge}</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+                <h4 className="text-lg font-semibold">Tools Used</h4>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {selectedProject.tools.map((tool) => (
+                    <span key={tool} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold">Approach</h4>
+              <ul className="mt-4 space-y-3 text-white/75">
+                {selectedProject.approach.map((item) => (
+                  <li key={item} className="flex gap-3 leading-7">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold">Outcomes</h4>
+              <ul className="mt-4 space-y-3 text-white/75">
+                {selectedProject.outcomes.map((item) => (
+                  <li key={item} className="flex gap-3 leading-7">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+    </main>
+  );
+}
